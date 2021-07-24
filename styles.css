@@ -30,8 +30,15 @@ p{
     margin: 24px 0;
 }
 
+#close-modal-button{
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    background-color: #f8f8f8;
+}
 
-.close,.grey-background,nav,#back-this-project-wrapper,.enter-your-pledge-wrapper,#thank-you{
+
+.grey-background,.enter-your-pledge-wrapper,#thank-you{
     display: none;
 }
 
@@ -263,7 +270,6 @@ main .grey-background{
 .grey-background::-webkit-scrollbar {
     display: none;
   }
-  
 
 .title-wrapper{
     display: flex;
@@ -395,7 +401,6 @@ h2{
     
 }
 
-/* Firefox */
     .pledge-amount{
     text-align: left;
     -moz-appearance: textfield;
@@ -424,12 +429,16 @@ h2{
         padding: 24px;
         box-sizing: border-box;
         text-align: center;
-        border-radius: 12px;
+        border-radius: 6px;;
     }
 
     #checkmark{
         display: block;
         margin: 0 auto;
+    }
+
+    #bookmark-desktop{
+        display: none;
     }
 
     @media  only screen and (min-width: 988px) {
@@ -508,23 +517,174 @@ h2{
             height: 56px;
             padding: 0;
             position: relative;
-            width: 130px;
+            width: 160px;
+            background-color: #dad8d8;
         }
 
         
         .bookmark-icon{
             position: absolute;
             left: 0;
-            color:  #3d3d3d;
+            top: 0;
+    
         }
 
         #bookmark-desktop span{
             color: #3d3d3d;
+            font-weight: 700;
             position: absolute;
             top: 50%;
             margin-top: -9.6px;
-            margin-left: 10px;
+            margin-left: -12px;;
+            font-size: 14px;;
         }
+
+        #stats-only-wrapper{
+            display: flex;
+            justify-content: flex-start;
+            
+        }
+
+        .stats-display-stat-wrapper{
+            width: 33%;
+            padding: 0 80px 0 40px;
+            position: relative;
+            box-sizing: border-box;
+            text-align: left;
+            
+        }
+
+        .stats-display-stat-wrapper.first{
+            padding: 0 40px 0 0;
+            width: 33%;
+            
+        }
+
+        .stat{
+            font-size: 36px;
+        }
+
+        .stat-underline{
+            border: none;
+            border-right: 2px solid var(--Dark-gray);
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .positioning-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+ 
+        .pledege-tier-info-wrapper .green-button{
+            transform: none;
+            width: 110px;
+            height: 15px;
+            box-sizing: content-box;
+            padding: 18px 30px;
+            display: inline-flex;
+            align-items: center; 
+            justify-content: space-around;
+
+        }
+
+        #back-this-project-wrapper{
+            position: absolute;
+            width: 730px;
+            margin-left: -365px;
+            left: 50%;
+            top: 200px;
+            padding: 48px;
+            display: block;
+            
+           
+
+        }
+
+        .modal-pledge-tier-info{
+            position: relative;
+            padding: 24px 36px;
+        }
+
+        #back-this-project-form-wrapper{
+            width: 100%;
+            height: 1365.26px;
+        }
+
+        .modal-pledge-tier-wrapper .body-copy{
+           margin-left: 36px; 
+           margin: 24px 0 0 36px;
+        }
+
+        #back-this-project-wrapper .title-subtitle-wrapper{
+            width: 400px;
+
+        }
+
+        #back-this-project-wrapper .green-subheading{
+            margin-left: 16px;
+        }
+
+        #back-this-project-wrapper .pledge-stat-wrapper{
+            position: absolute;
+            top: 0;
+            right: 36px;
+
+        }
+
+
+
+        #thank-you{
+            
+            width: 450px;
+            padding: 48px 24px 24px 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -182.075px 0 0 -225px;
+           
+        }
+
+        #thank-you h1{
+            font-size: 28px;
+        }
+
+        #checkmark{
+            transform: scale(1.5);
+        }
+
+        .enter-your-pledge-wrapper{
+            display: block;
+            text-align: left;
+            padding: 24px 36px;
+            position: relative;
+            height: 48px;
+
+        }
+
+        .modal-pledge-tier-wrapper .enter-your-pledge-wrapper .body-copy{
+            text-align: left;
+            margin: 0;
+            width: 130px;
+            display: inline-block;
+            position: relative;
+            top: 12px;
+            
+
+        }
+
+        
+
+        .enter-your-pledge-button-wrapper{
+            display: inline-flex;
+            width: 273px;
+            position: absolute;
+            right: 36px;
+        }
+        
 
     }
 
