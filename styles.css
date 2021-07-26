@@ -37,7 +37,6 @@ p{
     background-color: #f8f8f8;
 }
 
-
 .grey-background,.enter-your-pledge-wrapper,#thank-you{
     display: none;
 }
@@ -60,6 +59,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.hamburger-controls.close{
+    display: none;
+    position: absolute;
+    z-index: 9;
+    top: 32px;
+    right: 24px;
 }
 
 #default-content{
@@ -287,10 +294,6 @@ main .grey-background{
     border: 1px solid rgba(100, 100, 111, 0.2);
 }
 
-#pledge-no-rewards-wrapper{
-    padding: 24px;
-}
-
 .modal-pledge-tier-info{
     padding: 24px;
 }
@@ -300,7 +303,7 @@ h2{
     display: inline-block;
 }
 
-.modal-pledge-checkbox-title-wrapper{
+.modal-pledge-radio-title-wrapper{
     display: flex;
     align-items: center;
     justify-content: start;
@@ -327,7 +330,7 @@ h2{
     width: 20px;
 }
 
-.modal-checkbox{
+.modal-radio{
     opacity: 0;
     width: 20px;
     height: 20px;
@@ -344,7 +347,7 @@ h2{
     border: 1px solid rgba(100, 100, 111, 0.2);
 }
 
-.modal-checkbox:checked ~.radio-control{
+.modal-radio:checked ~.radio-control{
     background: radial-gradient(var(--Moderate-cyan) 40%, rgba(255, 0, 0, 0) 41%);
 }
 
@@ -519,6 +522,7 @@ h2{
             position: relative;
             width: 160px;
             background-color: #dad8d8;
+            display: inline-block;
         }
 
         
@@ -599,10 +603,10 @@ h2{
             top: 200px;
             padding: 48px;
             display: block;
-            
-           
 
         }
+
+
 
         .modal-pledge-tier-info{
             position: relative;
@@ -657,7 +661,6 @@ h2{
         }
 
         .enter-your-pledge-wrapper{
-            display: block;
             text-align: left;
             padding: 24px 36px;
             position: relative;
@@ -676,7 +679,6 @@ h2{
 
         }
 
-        
 
         .enter-your-pledge-button-wrapper{
             display: inline-flex;
@@ -684,8 +686,28 @@ h2{
             position: absolute;
             right: 36px;
         }
-        
 
+        .modal-radio:hover ~ .radio-control{
+            border: 1px solid var(--Moderate-cyan);
+        }
+
+        #close-modal-icon:hover{
+            opacity: 1;
+        }
+        
+        .modal-pledge-tier-info h2:hover{
+            color: var(--Moderate-cyan)
+        }
+
+        .pledge-amount:focus {
+            border: 1px solid var(--Moderate-cyan);
+        }
+
+        .green-button:hover{
+            background-color: var(--Dark-cyan);
+        }
+
+        
     }
 
 
