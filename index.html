@@ -79,19 +79,19 @@
           <button  type="button" id="bookmark-desktop">
             <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg" class="bookmark-icon">
               <g  fill-rule="evenodd">
-                <circle fill="#000000"  cx="28" cy="28" r="28"/>
+                <circle id="bookmark-circle" cx="28" cy="28" r="28"/>
                 <path fill="#dad8d8" d="M23 19v18l5-5.058L33 37V19z"/>
               </g>
             </svg>
-              <span>Bookmark</span>
+              <span id="bookmark-span">Bookmark</span>
           </button>
         </div>
       </div>
       <div id="stats-display-wrapper" class="container">
         <div id="stats-only-wrapper">
           <div class="stats-display-stat-wrapper first">
-            <p class="stat">
-              $89,914
+            <p id="total-pledged"class="stat">
+              
             </p>
             <p class="stat-subheading">
               of $100,000 backed
@@ -139,7 +139,7 @@
           to allow notepads, pens, and USB sticks to be stored under the stand.
         </p>
         
-        <div class="pledege-tier-info-wrapper">
+        <div class="pledge-tier-info-wrapper">
           <div class="positioning-wrapper">
             <h2>
               Bamboo Stand
@@ -165,7 +165,7 @@
             </button>
           </div>
         </div>
-        <div class="pledege-tier-info-wrapper">
+        <div class="pledge-tier-info-wrapper">
           <div class="positioning-wrapper">
             <h2>
               Black Edition Stand
@@ -191,7 +191,7 @@
             </button>
           </div>
         </div>
-        <div class="pledege-tier-info-wrapper" class="Out of Stock">
+        <div class="pledge-tier-info-wrapper" class="Out of Stock">
           <div class="positioning-wrapper">
             <h2>
               Mahogany Special Edition
@@ -261,13 +261,18 @@
                 Enter your pledge
               </p>
               <div class="enter-your-pledge-button-wrapper">
-                <div class="pledge-input-wrapper">
-                  <span class="dollar-sign">$</span>
-                  <input type="number" placeholder="1" min="1" class="pledge-amount">
+                <div class="enter-your-pledge-relative-button-wrapper">
+                  <div class="error-message">
+                  
+                  </div>
+                  <div class="pledge-input-wrapper">
+                    <span class="dollar-sign">$</span>
+                    <input type="number" placeholder="1" min="1" class="pledge-amount">
+                  </div>
+                  <button type="button"  class="green-button pledge-finish">
+                    Continue
+                  </button>
                 </div>
-                <button type="button"  class="green-button pledge-finish">
-                  Continue
-                </button>
               </div>
             </div>
           </div>
@@ -306,13 +311,18 @@
                 Enter your pledge
               </p>
               <div class="enter-your-pledge-button-wrapper">
-                <div class="pledge-input-wrapper">
-                  <span class="dollar-sign">$</span>
-                  <input type="number" placeholder="25" min="25" class="pledge-amount">
+                <div class="enter-your-pledge-relative-button-wrapper">
+                  <div class="error-message">
+                  
+                  </div>
+                  <div class="pledge-input-wrapper">
+                    <span class="dollar-sign">$</span>
+                    <input type="number" placeholder="25" min="25" class="pledge-amount">
+                  </div>
+                  <button type="button" class="green-button pledge-finish">
+                    Continue
+                  </button>
                 </div>
-                <button type="button" class="green-button pledge-finish">
-                  Continue
-                </button>
               </div>
             </div>
           </div>
@@ -351,13 +361,18 @@
                 Enter your pledge
               </p>
               <div class="enter-your-pledge-button-wrapper">
-                <div class="pledge-input-wrapper">
-                  <span class="dollar-sign">$</span>
-                  <input type="number" placeholder="75" min="75" class="pledge-amount">
+                <div class="enter-your-pledge-relative-button-wrapper">
+                  <div class="error-message">
+
+                  </div>
+                  <div class="pledge-input-wrapper">
+                    <span class="dollar-sign">$</span>
+                    <input type="number" placeholder="75" min="75" class="pledge-amount">
+                  </div>
+                  <button  type="button" class="green-button pledge-finish">
+                    Continue
+                  </button>
                 </div>
-                <button  type="button" class="green-button pledge-finish">
-                  Continue
-                </button>
               </div>
             </div>
           </div>
@@ -396,13 +411,18 @@
                 Enter your pledge
               </p>
               <div class="enter-your-pledge-button-wrapper">
-                <div class="pledge-input-wrapper">
-                  <span class="dollar-sign">$</span>
-                  <input type="number" placeholder="200" min="200" class="pledge-amount">
+                <div class="enter-your-pledge-relative-button-wrapper">
+                  <div class="error-message">
+                  
+                  </div>
+                  <div class="pledge-input-wrapper">
+                    <span class="dollar-sign">$</span>
+                    <input type="number" placeholder="200" min="200" class="pledge-amount">
+                  </div>
+                  <button type="button" class="green-button pledge-finish">
+                    Continue
+                  </button>
                 </div>
-                <button type="button" class="green-button pledge-finish">
-                  Continue
-                </button>
               </div>
             </div>
           </div>
