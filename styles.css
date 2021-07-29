@@ -365,26 +365,25 @@ h2{
 .enter-your-pledge-wrapper{
     
     border-top: solid 1px rgba(100, 100, 111, 0.2);
-    padding: 24px;
     text-align: center;
     position: relative;
 }
 
 .enter-your-pledge-wrapper .body-copy{
-    margin: 0 0 24px 0;
+    margin: 24px 0;
 }
 
 
 .enter-your-pledge-button-wrapper{
     position: relative;
-    width: 290px;
+    width: 277px;
     margin: 0 auto;
 }
 
 .error-message{
         
     position: relative;
-    margin: 16px auto;
+    margin: 0 auto;
     color: rgb(155, 27, 27);
     font-weight: 700;
 }
@@ -702,15 +701,14 @@ font-family: 'Commissioner', sans-serif;
 
 
     .enter-your-pledge-button-wrapper{
-        display: inline-flex;
-        justify-content: flex-end;
-        width: 273px;
+        width: 265px;
         position: absolute;
         right: 36px;
+        top: 24px;
     }
 
     .enter-your-pledge-absolute-button-wrapper{
-        position: relative
+        justify-content: space-between;
     }
 
     .enter-your-pledge-button-wrapper .pledge-finish{

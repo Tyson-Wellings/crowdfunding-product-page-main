@@ -1,3 +1,4 @@
+//variable declerations begin
 let hamburgerIcons = document.getElementsByClassName("hamburger-controls");
 let nav = document.getElementsByClassName("grey-background")[0];
 let infoCards = document.getElementsByClassName("pledge-tier-info-wrapper")
@@ -16,73 +17,55 @@ let modalPledgeInputs = document.getElementsByClassName("pledge-amount");
 let modalComplete = document.getElementById("thank-you");
 let bambooStock = 101;
 let blackEditionStock = 64;
-let MahoganyStock = 0;
-let inventory = [bambooStock, blackEditionStock, MahoganyStock];
+let mahoganyStock = 0;
+let inventory = [bambooStock, blackEditionStock, mahoganyStock];
 let totalPledged = 89914
+console.log(modalPledgeStat)
+//variable declerations end 
 
-function init() {
+//function init runs when the document loads
+function init() { 
+    
+    prepareHamburgerControls()
+    preparePledgeButtons()
     prepareModalControls()
-    Array.from(hamburgerIcons).forEach(prepareHamburgerControls)
-    Array.from(pledgeButtons).forEach(preparePledgeButtons)
     checkInventory()
     prepareBookmarkButton()
     calculateTotalPledged(0)
     
-   
 }
 
-function checkInventory() {
-    inventory.forEach(function (stock, index) {
-        updateInventoryOnFrontEnd(stock,index)
-        if (stock == 0) {
-            updateStylesBasedOnInventory(index)
-        }
-    })
-}
-
-function updateInventoryOnFrontEnd(stock,index){
-    pledgeStat[index].innerText = stock;
-    modalPledgeStat[index].innerHTML = stock;
-}
-
-function updateStylesBasedOnInventory(index){
-        pledgeButtons[index + 1].innerText = "Out of Stock"
-        infoCards[index].style.opacity = "0.5"
-        modalRadioControls[index].disabled = "true"
-        pledgeButtons[index+1].disabled = "true"
-        pledgeButtons[index+1].style.backgroundColor ="grey"
-        modalCards[index+1].style.opacity = "0.5"
+function prepareHamburgerControls() {
+    Array.from(hamburgerIcons).forEach(function(input,index){
+        input.addEventListener("click", function () {
+            if (index == 0) {
+                input.style.display = "none"
+                hamburgerIcons[1].style.display = "inline-block"
+                nav.style.display = "block"
+                return
+            }
     
-}
-
-
-function prepareHamburgerControls(input, index) {
-
-    input.addEventListener("click", function () {
-        if (index == 0) {
             input.style.display = "none"
-            hamburgerIcons[1].style.display = "inline-block"
-            nav.style.display = "block"
+            hamburgerIcons[0].style.display = "inline-block"
+            nav.style.display = "none"
             return
-        }
-
-        input.style.display = "none"
-        hamburgerIcons[0].style.display = "inline-block"
-        nav.style.display = "none"
-        return
+        })
     })
 }
 
 function preparePledgeButtons(input, index) {
-    input.addEventListener("click", function () {
-        modalContainer.style.display = "block"
-        modal.style.display = "block"
-        modalComplete.style.display = "none"
-        if (index > 0) {
+    Array.from(pledgeButtons).forEach(function(input, index){
+        input.addEventListener("click", function () {
+
+            modalContainer.style.display = "block"
+            modal.style.display = "block"
+            modalComplete.style.display = "none"
             modalRadios[index].checked = "true"
             openPledgeDropdowns()
-        }
+            
+        })
     })
+   
 }
 
 function prepareModalControls() {
@@ -94,6 +77,7 @@ function prepareModalControls() {
     preparePledgeSubmitButtons()
 }
 
+
 function prepareModalCloseControls(){
     let modalCloseButton = document.getElementById("close-modal-button")
     modalCloseButton.addEventListener("click", function () {
@@ -101,7 +85,7 @@ function prepareModalCloseControls(){
     })
 }
 
-function prepareGotItButton(){
+function prepareGotItButton(){ //got it button is the one that closes the thank you message
     let gotItButton = document.getElementsByClassName("got-it")[0]
     gotItButton.addEventListener("click", function () {
         modalContainer.style.display = "none"
@@ -148,7 +132,9 @@ function prepareModalRadioInteractions(){
            addModalRadioInteractionsEventListeners(input, index)
         }
         if (inventory[index-1] == 0){
+            
             input.disabled = "true"
+            
         }
     })
 }
@@ -167,71 +153,6 @@ function addModalRadioInteractionsEventListeners(radioButton, index){
         modalTierTitles[index].style.color = "black"
         modalRadioControls[index].style.border = "1px solid black"
     })
-}
-
-function preparePledgeSubmitButtons(){
-    
-    Array.from(modalContinueButtons).forEach(function (button,index) {
-        button.addEventListener("click", function () {
-            
-            let amountPledged = modalPledgeInputs[index].value 
-            console.log(validatePledge(index))
-            if (validatePledge(index) == true){
-                modal.style.display = "none"
-                modalComplete.style.display = "block"
-                modalContainer.style.height = "100%"
-                calculateTotalPledged(amountPledged)
-            }
-        })
-    })
-}
-
-function validatePledge(index){
-    let amountPledged = modalPledgeInputs[index].value
-    let pledgeMin = document.getElementsByClassName("pledge-amount")[index].min 
-    errorMessage = document.getElementsByClassName("error-message")[index]
-
-    console.log(amountPledged)
-    if (amountPledged < pledgeMin){
-        printErrorMessages(amountPledged,index)
-        return false
-    }
-
-    if (amountPledged >= pledgeMin){
-        removeErrorMessages(index)
-        return true
-    } 
-
-}
-
-function printErrorMessages(value,index){
-
-    let pledgeMin = document.getElementsByClassName("pledge-amount")[index].min 
-    errorMessage = document.getElementsByClassName("error-message")[index]
-    modalPledgeInputs[index].style.border ="2px solid rgb(155, 27, 27)"
-    
-    if (value == ""){
-       errorMessage.innerText = "Pledge not specified"
-       return
-    }
-
-    if (value == 0){
-        errorMessage.innerText = "Pledge cannot be 0"
-        return
-    }
-
-    if (value < pledgeMin){
-        errorMessage.innerText = "Minimum pledge is " + modalPledgeInputs[index].min +"$"
-        return
-    }
-    
-
-}
-
-function removeErrorMessages(index){
-    errorMessage = document.getElementsByClassName("error-message")[index]
-    modalPledgeInputs[index].style.border ="1px solid rgba(100, 100, 111, 0.2)"
-    errorMessage.innerText = ""
 }
 
 function openPledgeDropdowns() {
@@ -261,6 +182,105 @@ function colorModalTierTitles() {
 
     })
 
+}
+
+function preparePledgeSubmitButtons(){
+    
+    Array.from(modalContinueButtons).forEach(function (button,index) {
+        button.addEventListener("click", function () {
+            
+            let amountPledged = modalPledgeInputs[index].value 
+            if (validatePledge(index) == true){
+                openThankYouCard()
+                calculateTotalPledged(amountPledged)
+                updateInventoryOnBackend(index)
+            }
+        })
+    })
+}
+
+function validatePledge(index){
+    let amountPledged = parseInt(modalPledgeInputs[index].value)
+    let pledgeMin = parseInt(document.getElementsByClassName("pledge-amount")[index].min) 
+    errorMessage = document.getElementsByClassName("error-message")[index]
+
+    if (amountPledged >= pledgeMin){
+        removeErrorMessages(index)
+        return true
+    } 
+
+    if (amountPledged < pledgeMin){
+        printErrorMessages(amountPledged,index)
+        return false
+    }
+
+}
+
+function removeErrorMessages(index){
+    errorMessage = document.getElementsByClassName("error-message")[index]
+    modalPledgeInputs[index].style.border ="1px solid rgba(100, 100, 111, 0.2)"
+    errorMessage.innerText = ""
+}
+
+function printErrorMessages(value,index){
+
+    let pledgeMin = document.getElementsByClassName("pledge-amount")[index].min 
+    errorMessage = document.getElementsByClassName("error-message")[index]
+    modalPledgeInputs[index].style.border ="2px solid rgb(155, 27, 27)"
+    
+    if (value == ""){
+       errorMessage.innerText = "Pledge not specified"
+       return
+    }
+
+    if (value == 0){
+        errorMessage.innerText = "Pledge cannot be 0"
+        return
+    }
+
+    if (value < pledgeMin){
+        errorMessage.innerText = "Minimum pledge is " + modalPledgeInputs[index].min +"$"
+        return
+    }
+    
+
+}
+
+function openThankYouCard(){
+    modal.style.display = "none"
+    modalComplete.style.display = "block"
+    modalContainer.style.height = "100%"
+}
+
+function updateInventoryOnBackend(index){
+    if (index > 0){
+        inventory[index-1] --
+        checkInventory()
+    }
+}
+
+function checkInventory() {
+    inventory.forEach(function (stock, index) {
+        updateInventoryOnFrontEnd(stock,index)
+        if (stock == 0) {
+            updateStylesBasedOnInventory(index)
+        }
+    })
+}
+
+function updateInventoryOnFrontEnd(stock,index){
+    pledgeStat[index].innerText = stock;
+    modalPledgeStat[index].innerText = stock;
+}
+
+function updateStylesBasedOnInventory(index){
+        pledgeButtons[index + 1].innerText = "Out of Stock"
+        infoCards[index].style.opacity = "0.5"
+        modalRadioControls[index].disabled = "true"
+        pledgeButtons[index+1].disabled = "true"
+        pledgeButtons[index+1].style.backgroundColor ="grey"
+        modalCards[index+1].style.opacity = "0.5"
+    
 }
 
 function calculateTotalPledged(amountPledged){
@@ -319,4 +339,6 @@ function prepareBookmarkButton(){
         }
     })
 }
+
+// due to the use of functions this one line of code sets off a cascade of functions that controls the whole web page.
 document.addEventListener('DOMContentLoaded', init);
