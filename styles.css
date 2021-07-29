@@ -367,6 +367,7 @@ h2{
     border-top: solid 1px rgba(100, 100, 111, 0.2);
     padding: 24px;
     text-align: center;
+    position: relative;
 }
 
 .enter-your-pledge-wrapper .body-copy{
@@ -375,12 +376,26 @@ h2{
 
 
 .enter-your-pledge-button-wrapper{
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    width: 290px;
+    margin: 0 auto;
 }
 
-.enter-your-pledge-button-wrapper .green-button{
-    padding: 0 40px;
+.error-message{
+        
+    position: relative;
+    margin: 16px auto;
+    color: rgb(155, 27, 27);
+    font-weight: 700;
+}
+
+.enter-your-pledge-absolute-button-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pledge-finish{
+    padding: 14.4px 40px;
 }
 
 .pledge-input-wrapper{
@@ -407,335 +422,327 @@ h2{
     
 }
 
-    .pledge-amount{
-    text-align: left;
-    -moz-appearance: textfield;
-    border:1px solid rgba(100, 100, 111, 0.2);
+.pledge-amount{
+text-align: left;
+-moz-appearance: textfield;
+border:1px solid rgba(100, 100, 111, 0.2);
+background-color: #f8f8f8;
+display: inline-block;
+box-sizing: border-box;
+padding: 15px 27.4px 15px 40px;
+width: 110px;
+border-radius: 27.4px;
+font-weight: 700;
+font-family: 'Commissioner', sans-serif;  
+}
+
+.pledge-amount:focus{
+    outline: none;
+    border-color: var(--Moderate-cyan);
+
+} 
+
+#thank-you{
+
+    width: calc(100% - 48px);
+    margin: 0 auto;
     background-color: #f8f8f8;
-    display: inline-block;
+    padding: 24px;
     box-sizing: border-box;
-    padding: 15px 27.4px 15px 40px;
-    width: 110px;
-    border-radius: 27.4px;
-    font-weight: 700;
-    font-family: 'Commissioner', sans-serif;  
+    text-align: center;
+    border-radius: 6px;;
+}
+
+#checkmark{
+    display: block;
+    margin: 0 auto;
+}
+
+#bookmark-desktop{
+    display: none;
+}
+
+@media  only screen and (min-width: 988px) {
+
+    h1{
+        font-size: 32px;
     }
- 
-    .pledge-amount:focus{
-        outline: none;
-        border-color: var(--Moderate-cyan);
+    header{
+        background: url(images/image-hero-desktop.jpg) no-repeat center ;
+        height: 400px;
+        display: flex;
+        padding: 50px 150px;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-    } 
+    #header-top{
+        display: inline-block;
+        padding:0;
+        width: 127.57px;
+    }
 
-    #thank-you{
-    
-        width: calc(100% - 48px);
+    #default-content{
+        top: -150px;
+        width: 730px;
         margin: 0 auto;
-        background-color: #f8f8f8;
-        padding: 24px;
-        box-sizing: border-box;
-        text-align: center;
-        border-radius: 6px;;
     }
 
-    #checkmark{
-        display: block;
-        margin: 0 auto;
-    }
-
-    #bookmark-desktop{
+    .hamburger-controls{
         display: none;
     }
 
-    @media  only screen and (min-width: 988px) {
+    header .grey-background{
+        position: relative;
+        height: 26px;
+        width: 350px;
+        display: block;
+        background-color: rgba(100, 100, 111, 0);
+        padding: 0;
+    }
 
-        h1{
-            font-size: 32px;
-        }
-        header{
-            background: url(images/image-hero-desktop.jpg) no-repeat center ;
-            height: 400px;
-            display: flex;
-            padding: 50px 150px;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        #header-top{
-            display: inline-block;
-            padding:0;
-            width: 127.57px;
-        }
-
-        #default-content{
-            top: -150px;
-            width: 730px;
-            margin: 0 auto;
-        }
-
-        .hamburger-controls{
-            display: none;
-        }
-
-        header .grey-background{
-            position: relative;
-            height: 26px;
-            width: 350px;
-            display: block;
-            background-color: rgba(100, 100, 111, 0);
-            padding: 0;
-        }
-
-        nav{
-            display: flex;
-            background-color: rgba(100, 100, 111, 0.0);
-            justify-content: space-between;
-            width: 350px;
-            
-        }
-
-        .nav-links{
-            display: inline-block;
-            padding: 0;
-            color: white;
-            font-weight: 400;
-            width: auto;
-            
-        }
-        #nav-link-discover{
-            border: none;
-        }
-        .container{
-            padding: 54px;
-        }
-
-        #project-title h1{
-            width: 100%;
-        }
-
-        #project-title{
-            padding: 54px;
-        }
-
-        #bookmark-mobile{
-            display:none;
-            
-        }
-
-
-        #bookmark-desktop{
-            height: 56px;
-            padding: 0;
-            position: relative;
-            width: 160px;
-            background-color: #dad8d8;
-            display: inline-block;
-        }
-
-        
-        .bookmark-icon{
-            position: absolute;
-            left: 0;
-            top: 0;
-    
-        }
-
-
-        #bookmark-desktop #bookmark-span{
-            color: #3d3d3d;
-            font-weight: 700;
-            position: absolute;
-            top: 50%;
-            margin-top: -9.6px;
-            margin-left: -12px;;
-            font-size: 14px;;
-        }
-
-        #stats-only-wrapper{
-            display: flex;
-            justify-content: flex-start;
-            
-        }
-
-        .stats-display-stat-wrapper{
-            width: 33%;
-            padding: 0 80px 0 40px;
-            position: relative;
-            box-sizing: border-box;
-            text-align: left;
-            
-        }
-
-        .stats-display-stat-wrapper.first{
-            padding: 0 40px 0 0;
-            width: 33%;
-            
-        }
-
-        .stat{
-            font-size: 36px;
-        }
-
-        .stat-underline{
-            border: none;
-            border-right: 2px solid var(--Dark-gray);
-            height: 100%;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-
-        .positioning-wrapper{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
- 
-        .pledge-tier-info-wrapper .green-button{
-            transform: none;
-            width: 110px;
-            height: 15px;
-            box-sizing: content-box;
-            padding: 18px 30px;
-            display: inline-flex;
-            align-items: center; 
-            justify-content: space-around;
-
-        }
-
-        #back-this-project-wrapper{
-            position: absolute;
-            width: 730px;
-            margin-left: -365px;
-            left: 50%;
-            top: 200px;
-            padding: 48px;
-            display: block;
-
-        }
-
-
-
-        .modal-pledge-tier-info{
-            position: relative;
-            padding: 24px 36px;
-        }
-
-        #back-this-project-form-wrapper{
-            width: 100%;
-            height: 1365.26px;
-        }
-
-        .modal-pledge-tier-wrapper .body-copy{
-           margin-left: 36px; 
-           margin: 24px 0 0 36px;
-        }
-
-        #back-this-project-wrapper .title-subtitle-wrapper{
-            width: 400px;
-
-        }
-
-        #back-this-project-wrapper .green-subheading{
-            margin-left: 16px;
-        }
-
-        #back-this-project-wrapper .pledge-stat-wrapper{
-            position: absolute;
-            top: 0;
-            right: 36px;
-
-        }
-
-        #thank-you{
-            
-            width: 450px;
-            padding: 48px 24px 24px 24px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin: -182.075px 0 0 -225px;
-           
-        }
-
-        #thank-you h1{
-            font-size: 28px;
-        }
-
-        #checkmark{
-            transform: scale(1.5);
-        }
-
-        .enter-your-pledge-wrapper{
-            text-align: left;
-            padding: 24px 36px;
-            position: relative;
-            height: 48px;
-
-        }
-
-        .modal-pledge-tier-wrapper .enter-your-pledge-wrapper .body-copy{
-            text-align: left;
-            margin: 0;
-            width: 130px;
-            display: inline-block;
-            position: relative;
-            top: 12px;
-            
-
-        }
-
-
-        .enter-your-pledge-button-wrapper{
-            display: inline-flex;
-            width: 273px;
-            position: absolute;
-            right: 36px;
-        }
-
-        .enter-your-pledge-relative-button-wrapper{
-            position: relative
-        }
-
-        .enter-your-pledge-button-wrapper .pledge-finish{
-            padding: 14.4px 40px;
-        }
-
-        .error-message{
-            
-            width: 273px;
-            position: absolute;
-            top: 0; 
-            left: 0;
-            color: rgb(155, 27, 27);
-        }
-
-        #close-modal-icon:hover{
-            opacity: 1;
-        }
-        
-        .pledge-amount:focus {
-            border: 1px solid var(--Moderate-cyan);
-        }
-
-        .green-button:hover{
-            background-color: var(--Dark-cyan);
-        }
-
-        #bookmark-desktop:hover {
-            opacity: 0.8;
-        }
-
-        .nav-links:hover {
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3)
-        }
-
-        #nav-link-discover:hover{
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3)
-        }
-
+    nav{
+        display: flex;
+        background-color: rgba(100, 100, 111, 0.0);
+        justify-content: space-between;
+        width: 350px;
         
     }
+
+    .nav-links{
+        display: inline-block;
+        padding: 0;
+        color: white;
+        font-weight: 400;
+        width: auto;
+        
+    }
+    #nav-link-discover{
+        border: none;
+    }
+    .container{
+        padding: 54px;
+    }
+
+    #project-title h1{
+        width: 100%;
+    }
+
+    #project-title{
+        padding: 54px;
+    }
+
+    #bookmark-mobile{
+        display:none;
+        
+    }
+
+
+    #bookmark-desktop{
+        height: 56px;
+        padding: 0;
+        position: relative;
+        width: 160px;
+        background-color: #dad8d8;
+        display: inline-block;
+    }
+
+    
+    .bookmark-icon{
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+
+
+    #bookmark-desktop #bookmark-span{
+        color: #3d3d3d;
+        font-weight: 700;
+        position: absolute;
+        top: 50%;
+        margin-top: -9.6px;
+        margin-left: -12px;;
+        font-size: 14px;;
+    }
+
+    #stats-only-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        
+    }
+
+    .stats-display-stat-wrapper{
+        width: 33%;
+        padding: 0 80px 0 40px;
+        position: relative;
+        box-sizing: border-box;
+        text-align: left;
+        
+    }
+
+    .stats-display-stat-wrapper.first{
+        padding: 0 40px 0 0;
+        width: 33%;
+        
+    }
+
+    .stat{
+        font-size: 36px;
+    }
+
+    .stat-underline{
+        border: none;
+        border-right: 2px solid var(--Dark-gray);
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .positioning-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .pledge-tier-info-wrapper .green-button{
+        transform: none;
+        width: 110px;
+        height: 15px;
+        box-sizing: content-box;
+        padding: 18px 30px;
+        display: inline-flex;
+        align-items: center; 
+        justify-content: space-around;
+
+    }
+
+    #back-this-project-wrapper{
+        position: absolute;
+        width: 730px;
+        margin-left: -365px;
+        left: 50%;
+        top: 200px;
+        padding: 48px;
+        display: block;
+
+    }
+
+
+
+    .modal-pledge-tier-info{
+        position: relative;
+        padding: 24px 36px;
+    }
+
+    #back-this-project-form-wrapper{
+        width: 100%;
+        height: 1365.26px;
+    }
+
+    .modal-pledge-tier-wrapper .body-copy{
+        margin-left: 36px; 
+        margin: 24px 0 0 36px;
+    }
+
+    #back-this-project-wrapper .title-subtitle-wrapper{
+        width: 400px;
+
+    }
+
+    #back-this-project-wrapper .green-subheading{
+        margin-left: 16px;
+    }
+
+    #back-this-project-wrapper .pledge-stat-wrapper{
+        position: absolute;
+        top: 0;
+        right: 36px;
+
+    }
+
+    #thank-you{
+        
+        width: 450px;
+        padding: 48px 24px 24px 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -182.075px 0 0 -225px;
+        
+    }
+
+    #thank-you h1{
+        font-size: 28px;
+    }
+
+    #checkmark{
+        transform: scale(1.5);
+    }
+
+    .enter-your-pledge-wrapper{
+        text-align: left;
+        padding: 24px 36px;
+        position: relative;
+        height: 48px;
+
+    }
+
+    .enter-your-pledge-wrapper .body-copy{
+        text-align: left;
+        margin: 0;
+        width: 130px;
+        display: inline-block;
+        position: relative;
+        top: 12px;
+        
+
+    }
+
+
+    .enter-your-pledge-button-wrapper{
+        display: inline-flex;
+        justify-content: flex-end;
+        width: 273px;
+        position: absolute;
+        right: 36px;
+    }
+
+    .enter-your-pledge-absolute-button-wrapper{
+        position: relative
+    }
+
+    .enter-your-pledge-button-wrapper .pledge-finish{
+        padding: 14.4px 40px;
+    }
+
+    #close-modal-icon:hover{
+        opacity: 1;
+    }
+    
+    .pledge-amount:focus {
+        border: 1px solid var(--Moderate-cyan);
+    }
+
+    .green-button:hover{
+        background-color: var(--Dark-cyan);
+    }
+
+    #bookmark-desktop:hover {
+        opacity: 0.8;
+    }
+
+    .nav-links:hover {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3)
+    }
+
+    #nav-link-discover:hover{
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3)
+    }
+
+    
+}
 
 
 

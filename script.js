@@ -12,6 +12,7 @@ let modalRadioControls = document.getElementsByClassName("radio-control");
 let modalTierTitles = document.getElementsByClassName("modal-pledge-tier-title");
 let modalContinueButtons = document.getElementsByClassName("pledge-finish");
 let modalPledgeDropdowns = document.getElementsByClassName("enter-your-pledge-wrapper");
+let modalPledgeInputs = document.getElementsByClassName("pledge-amount");
 let modalComplete = document.getElementById("thank-you");
 let bambooStock = 101;
 let blackEditionStock = 64;
@@ -172,34 +173,65 @@ function preparePledgeSubmitButtons(){
     
     Array.from(modalContinueButtons).forEach(function (button,index) {
         button.addEventListener("click", function () {
-            if (validatePledge(index) == false){
-                let amountPledged = document.getElementsByClassName("pledge-amount")[index].value 
+            
+            let amountPledged = modalPledgeInputs[index].value 
+            console.log(validatePledge(index))
+            if (validatePledge(index) == true){
                 modal.style.display = "none"
                 modalComplete.style.display = "block"
                 modalContainer.style.height = "100%"
                 calculateTotalPledged(amountPledged)
             }
-
-            return
-           
         })
     })
 }
 
 function validatePledge(index){
-    let amountPledged = document.getElementsByClassName("pledge-amount")[index].value
+    let amountPledged = modalPledgeInputs[index].value
     let pledgeMin = document.getElementsByClassName("pledge-amount")[index].min 
     errorMessage = document.getElementsByClassName("error-message")[index]
 
-    if (amountPledged == 0){
-        errorMessage.innerText = "Pledge can't be $0"
+    console.log(amountPledged)
+    if (amountPledged < pledgeMin){
+        printErrorMessages(amountPledged,index)
         return false
     }
 
-    if (amountPledged < pledgeMin){
-        errorMessage.innerText = "Minimum pledge is " + pledgeMin
+    if (amountPledged >= pledgeMin){
+        removeErrorMessages(index)
+        return true
+    } 
+
+}
+
+function printErrorMessages(value,index){
+
+    let pledgeMin = document.getElementsByClassName("pledge-amount")[index].min 
+    errorMessage = document.getElementsByClassName("error-message")[index]
+    modalPledgeInputs[index].style.border ="2px solid rgb(155, 27, 27)"
+    
+    if (value == ""){
+       errorMessage.innerText = "Pledge not specified"
+       return
     }
 
+    if (value == 0){
+        errorMessage.innerText = "Pledge cannot be 0"
+        return
+    }
+
+    if (value < pledgeMin){
+        errorMessage.innerText = "Minimum pledge is " + modalPledgeInputs[index].min +"$"
+        return
+    }
+    
+
+}
+
+function removeErrorMessages(index){
+    errorMessage = document.getElementsByClassName("error-message")[index]
+    modalPledgeInputs[index].style.border ="1px solid rgba(100, 100, 111, 0.2)"
+    errorMessage.innerText = ""
 }
 
 function openPledgeDropdowns() {
