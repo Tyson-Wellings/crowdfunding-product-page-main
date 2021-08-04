@@ -367,17 +367,14 @@ h2{
     border-top: solid 1px rgba(100, 100, 111, 0.2);
     text-align: center;
     position: relative;
-}
-
-.enter-your-pledge-wrapper .body-copy{
-    margin: 24px 0;
+    padding: 24px 0;
 }
 
 
 .enter-your-pledge-button-wrapper{
     position: relative;
     width: 277px;
-    margin: 0 auto;
+    margin: 24px auto;
 }
 
 .error-message{
@@ -742,6 +739,29 @@ font-family: 'Commissioner', sans-serif;
     
 }
 
+@media  only screen and (max-width: 374px) {
+
+    .enter-your-pledge-button-wrapper{
+        width: 100%;
+    }
+
+    .pledge-input-wrapper{
+        width: 110px;
+    }
+
+    .enter-your-pledge-absolute-button-wrapper{
+        display: block;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .enter-your-pledge-absolute-button-wrapper .green-button{
+        width: 147.23px;
+        display: block;
+        margin: 12px auto;
+
+    }
+}
 
 
 
