@@ -385,7 +385,7 @@ h2{
     font-weight: 700;
 }
 
-.enter-your-pledge-absolute-button-wrapper{
+.enter-your-pledge-form{
     display: flex;
     justify-content: space-evenly;
 }
@@ -704,7 +704,7 @@ font-family: 'Commissioner', sans-serif;
         top: 24px;
     }
 
-    .enter-your-pledge-absolute-button-wrapper{
+    .enter-your-pledge-form{
         justify-content: space-between;
     }
 
@@ -749,13 +749,13 @@ font-family: 'Commissioner', sans-serif;
         width: 110px;
     }
 
-    .enter-your-pledge-absolute-button-wrapper{
+    .enter-your-pledge-form{
         display: block;
         max-width: 100%;
         position: relative;
     }
 
-    .enter-your-pledge-absolute-button-wrapper .green-button{
+    .enter-your-pledge-form .green-button{
         width: 147.23px;
         display: block;
         margin: 12px auto;

@@ -19,7 +19,8 @@ let bambooStock = 101;
 let blackEditionStock = 64;
 let mahoganyStock = 0;
 let inventory = [bambooStock, blackEditionStock, mahoganyStock];
-let totalPledged = 89914
+let totalPledged = 89914;
+let numberOfBackers = 5007;
 console.log(modalPledgeStat)
 //variable declerations end 
 
@@ -183,7 +184,7 @@ function colorModalTierTitles() {
     })
 
 }
-
+console.log(document.getElementsByClassName("enter-your-pledge-form"))
 function preparePledgeSubmitButtons(){
     
     Array.from(modalContinueButtons).forEach(function (button,index) {
@@ -191,9 +192,15 @@ function preparePledgeSubmitButtons(){
             
             let amountPledged = modalPledgeInputs[index].value 
             if (validatePledge(index) == true){
+                numberOfBackers++
                 openThankYouCard()
                 calculateTotalPledged(amountPledged)
                 updateInventoryOnBackend(index)
+                publishNumberOfBackers()
+                
+                document.getElementsByClassName("enter-your-pledge-form")[index].reset()
+
+                
             }
         })
     })
@@ -340,5 +347,8 @@ function prepareBookmarkButton(){
     })
 }
 
+function publishNumberOfBackers(){
+    document.getElementById('number-of-backers').innerText = numberOfBackers
+}
 // due to the use of functions this one line of code sets off a cascade of functions that controls the whole web page.
 document.addEventListener('DOMContentLoaded', init);
